@@ -6,3 +6,6 @@
 
 动画2 -- [心跳](./动效开发1/属性案例体验/心跳/index.html)
 ![](https://cdn.nlark.com/yuque/0/2022/gif/22203542/1647496933870-1ca1cdf0-5768-48fe-99ab-5bfd0e16163e.gif)
+
+动画3 -- [小球升降](./动效开发1/属性案例体验/多个小球错开降落及上升/index.html)
+![](https://cdn.nlark.com/yuque/0/2022/gif/22203542/1647495324360-6fddf9ec-9f1a-4983-9e01-c38eba06ba60.gif)
