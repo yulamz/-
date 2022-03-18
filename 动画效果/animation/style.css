@@ -1,0 +1,53 @@
+@charset "UTF-8";
+.container {
+  color: plum;
+  -webkit-animation: bounceIn 2s ease 2s 1 normal;
+          animation: bounceIn 2s ease 2s 1 normal;
+  font-size: 36px;
+}
+
+.container:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+/*
+  让我们看看一个简单的@关键帧，我命名为“bounceIn”。
+  这个@关键帧有三个阶段。
+  在第一阶段(0%)，将元素设置为全透明（CSS3 opacity 0），并使用 CSS3 transform scale 将其缩小到默认大小的10%。
+  在第二阶段(60%)，元素逐渐变为完全不透明（CSS3 opacity 1），并增大到默认大小的120%。
+  在最后阶段(100%)，它稍微缩小并回到默认大小。
+*/
+@-webkit-keyframes bounceIn {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0.4;
+  }
+  60% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0.4;
+  }
+  60% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=style.css.map */

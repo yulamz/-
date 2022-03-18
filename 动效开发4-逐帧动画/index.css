@@ -1,0 +1,23 @@
+.page_key {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 200px;
+  height: 140px;
+  background-image: url("./images/p8.png");
+  -webkit-animation: p8 steps(4, end) 1.5s infinite;
+          animation: p8 steps(4, end) 1.5s infinite;
+}
+
+@-webkit-keyframes p8 {
+  100% {
+    background-position: 0 -640px;
+  }
+}
+
+@keyframes p8 {
+  100% {
+    background-position: 0 -640px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,17 @@
+.page_key {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 200px;
+  height: 140px;
+  background-image: url("./images/p8.png");
+  animation: p8 steps(4,end) 1.5s infinite;
+}
+
+@mixin frame($frameNum, $frameHeight) {
+  100% {background-position: 0 #{-$frameNum*$frameHeight}px;}
+}
+
+@keyframes p8 {
+  @include frame($frameNum: 4, $frameHeight: 160)
+}

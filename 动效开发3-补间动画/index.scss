@@ -1,0 +1,172 @@
+html {
+  font-size: 16px; 
+}
+body {
+  background-color: black;
+}
+
+$designWidth: 640px;
+
+@function rem($n) {
+  @return ($n / $designWidth ) * 10 + rem;
+}
+.timeline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  &_tit {
+    position: relative;
+    padding: rem(70px) 0 rem(30px);
+    font-size: rem(60px);
+    line-height: rem(90px);
+    color: #fff;
+    text-align: center;
+    span{
+      display: block;
+      font-size: rem(36px);
+      line-height: rem(50px);
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      width: rem(92px);
+      height: 1px;
+      background: #ff0000;
+      bottom: 0;
+      left: 50%;
+      margin-left: rem(-46px);
+    };
+  }
+  &_icon {
+    position: relative;
+    width: rem(102px);
+    height: rem(102px);
+    margin: rem(36px) auto 0;
+    background: url("images/1.png") no-repeat center;
+    background-size: rem(57px) rem(50px);
+    svg {
+      width: rem(102px);
+      height: rem(102px);
+      stroke: #0084ff;
+      stroke-width: 2px;
+      fill: none;
+      stroke-dasharray: 320;
+      // 设置描边 
+      stroke: #0084ff;
+      stroke-width: 2px;
+      fill: none;
+      animation: on_tl_iconsvg .5s 0.9s linear both;
+    }
+    animation: on_tl_icon 1.2s .5s linear both;
+  }
+  &_list {
+    position: relative;
+    bottom: 0;
+    width: rem(900px);
+    height: rem(1224px);
+    margin: 0 auto;
+    padding: rem(68px) 0;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  &_line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #0084ff;
+    top: 0;
+    left: 50%;
+  }
+  &_item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    z-index: 9;
+    animation: on_tl_item 0.45s ease both;
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: (2.2s + 0.15s * $i);
+      }
+    }
+    b {
+      position: absolute;
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      margin: rem(-7px) 0 0 rem(-7px);
+      z-index: 1;
+      background: #fff;
+      box-shadow: 0 0 0 rem(13px) #0084ff;
+    }
+    &_sp {
+      b{
+        background: #0084ff;
+        box-shadow: none;
+      }
+    }
+    &_cnt {
+      flex: 1;
+      padding: 0 rem(100px);
+      &:nth-child(1){
+        text-align:right;
+      };
+      &:nth-child(2){
+        text-align:left;
+      };
+      &.flag{
+        width: rem(111px);
+        height: rem(65px);
+        i{
+          display: inline-block;
+          width: rem(111px);
+          height: rem(65px);
+          background-size: 100%;
+        }
+      }
+      &.country{
+        font-size: rem(36px);
+        color: #66b5ff;
+      }
+      &.time{
+        font-size: rem(36px);
+      }
+      &.city{
+        font-size: rem(48px);
+      }
+      .flag_sin{
+        background: url("images/2.png?__inline") no-repeat;
+      }
+      .flag_us{
+        background: url("images/3.png?__inline") no-repeat;
+      }
+      .flag_uk{
+        background: url("images/4.png?__inline") no-repeat;
+      }
+    }
+  }
+}
+
+@keyframes on_tl_iconsvg{
+// 利用 stroke-dashoffset 实现补间动画 -- 该属性指定了虚线路线起始点的距离
+  0% {stroke-dashoffset: 320;}
+  100% {stroke-dashoffset: 0;}
+}
+
+@keyframes on_tl_icon{
+  0% {transform: translateY(rem(480px));opacity: 0}
+  // 先渐现
+  66.66% {transform: translateY(rem(480px));opacity: 1}
+  // 再向上偏移
+  100% {transform: translateY(0);opacity: 1}
+}
+
+@keyframes on_tl_item {
+  0% {transform: scale(0,0); opacity: 0}
+  100% {transform: scale(1,1); opacity: 1}
+}

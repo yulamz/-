@@ -1,0 +1,126 @@
+html {
+  font-size: 16px; 
+}
+body {
+  background-color: black;
+}
+
+$designWidth: 640px;
+
+@function rem($n) {
+  @return ($n / $designWidth ) * 10 + rem;
+}
+.timeline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  &_list {
+    position: relative;
+    bottom: 0;
+    width: rem(900px);
+    height: rem(1224px);
+    margin: 0 auto;
+    padding: rem(68px) 0;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+  }
+  &_line {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #0084ff;
+    top: 0;
+    left: 50%;
+  }
+  &_item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    z-index: 9;
+    animation: on_tl_item 0.45s ease both;
+    // 根据动画分解表，我们知道动画时长为 0.45s，初始延时 2.35s，而每个列表项之间间隔 0.15s，
+    // 因此推算得出第 i 个列表项（1 <= i < 10）的延时为（2.2s + 0.15s + i )。
+    // @for $i from 1 to 10 {
+    //   &:nth-child(#{$i}) {
+    //     animation-delay: (2.2s + 0.15s * $i);
+    //   }
+    // }
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: (2.2s + 0.15s * $i)
+      }
+    }
+    b {
+      position: absolute;
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      margin: rem(-7px) 0 0 rem(-7px);
+      z-index: 1;
+      background: #fff;
+      box-shadow: 0 0 0 rem(13px) #0084ff;
+    }
+    &_sp {
+      b{
+        background: #0084ff;
+        box-shadow: none;
+      }
+    }
+    &_cnt {
+      flex: 1;
+      padding: 0 rem(100px);
+      &:nth-child(1){
+        text-align:right;
+      };
+      &:nth-child(2){
+        text-align:left;
+      };
+      &.flag{
+        width: rem(111px);
+        height: rem(65px);
+        i{
+          display: inline-block;
+          width: rem(111px);
+          height: rem(65px);
+          background-size: 100%;
+        }
+      }
+      &.country{
+        font-size: rem(36px);
+        color: #66b5ff;
+      }
+      &.time{
+        font-size: rem(36px);
+      }
+      &.city{
+        font-size: rem(48px);
+      }
+      .flag_sin{
+        background: url("images/2.png?__inline") no-repeat;
+      }
+      .flag_us{
+        background: url("images/3.png?__inline") no-repeat;
+      }
+      .flag_uk{
+        background: url("images/4.png?__inline") no-repeat;
+      }
+    }
+  }
+}
+
+@keyframes on_tl_item {
+  0% {
+    transform: scale(0,0); 
+    opacity: 0
+  }
+  100% {
+    transform: scale(1,1);
+    opacity: 1
+  }
+}

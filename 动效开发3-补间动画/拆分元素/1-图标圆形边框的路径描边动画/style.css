@@ -1,0 +1,54 @@
+html {
+  font-size: 64px;
+}
+
+body {
+  background-color: black;
+}
+
+.timeline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.timeline_icon {
+  position: relative;
+  width: 1.59375rem;
+  height: 1.59375rem;
+  margin: 0.5625rem auto 0;
+  background: url("../../images/1.png") no-repeat center;
+  background-size: 0.89062rem 0.78125rem;
+}
+
+.timeline_icon svg {
+  width: 1.59375rem;
+  height: 1.59375rem;
+  stroke: #0084ff;
+  stroke-width: 2px;
+  fill: none;
+  stroke-dasharray: 400;
+  -webkit-animation: on_tl_iconsvg .5s 0.9s linear both;
+          animation: on_tl_iconsvg .5s 0.9s linear both;
+}
+
+@-webkit-keyframes on_tl_iconsvg {
+  0% {
+    stroke-dashoffset: 320;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes on_tl_iconsvg {
+  0% {
+    stroke-dashoffset: 320;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

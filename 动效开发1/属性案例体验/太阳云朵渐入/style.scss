@@ -1,0 +1,130 @@
+.wrapper {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  background: burlywood;
+}
+
+// 画圆三件套：width, height，border-radius 50%
+.sun {
+  background: gold;
+  border-radius: 50%;
+  height: 90px;
+  left: -20px;
+  position: absolute;
+  top: 120px;
+  width: 90px;
+  animation: pulse .75s ease-in-out 2s both;
+}
+
+.clouds-wrapper {
+  position: absolute;
+  top: 190px;
+  animation: pulse .75s ease-in-out 3s both ;
+}
+
+.clouds1 {
+  position: absolute;
+  z-index: 20;
+}
+
+// 如何画一个云朵：新增3个矩形，通过设置边框圆角和位置偏移即可
+.clouds1 div {
+  background: Gainsboro;
+  position: absolute;
+  
+  &:nth-child(1) {
+    border-radius: 30px;
+    height: 50px;
+    width: 150px;
+  } 
+  
+  &:nth-child(2) {
+    border-radius: 50%;
+    height: 80px;
+    margin-top: -40px;
+    margin-left: 23px;
+    width: 80px;
+  }
+
+  &:nth-child(3) {
+    border-radius: 50%;
+    height: 50px;
+    margin-top: -25px;
+    margin-left: 80px;
+    width: 50px;
+  }
+}
+
+/*
+  如何画云朵的阴影？
+  通过 @extend 继承云朵的样式，配合 z-index 使阴影置于底部，
+  与此同时，偏移位置和用 transform scale 放大，达到效果
+*/
+.shadow {
+  @extend .clouds1;
+  bottom: 3px;
+  transform: scale(1.04);
+  background: white;
+  left: -5px;
+  z-index: 10;
+}
+
+.shadow div {
+  background: white;
+}
+
+.rain {
+  background: darkturquoise;
+  border-radius: 5px;
+  height: 10px;
+  width: 40px;
+  &-wrapper {
+    margin-left: 20px;
+    position: absolute;
+    top: 270px;
+  }
+  &-container {
+    display: inline-block;
+    transform: rotate(120deg); // 顺时针旋转120度
+    width: 20px;
+  }
+}
+
+@for $i from 1 through 3 {
+  .rain#{$i} {
+    @extend .rain;
+    margin-left: -15px;
+    animation: pulse .75s ease-in-out (3.5s + 0.4s * ($i - 1)) both;
+  }
+}
+
+
+@keyframes pulse {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); // 感觉用不用动效差别不大
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}

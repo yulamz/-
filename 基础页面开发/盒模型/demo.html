@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .content-box {
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      margin: 20px;
+      border: 1px solid rebeccapurple;
+      background-color: antiquewhite;
+    }
+    .border-box {
+      box-sizing: border-box;
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      margin: 20px;
+      border: 1px solid rebeccapurple;
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-box" id="contentBox">标准盒模型</div>
+  <button onclick="getContentBoxOffsetWidth()">获取标准盒模型的宽度</button>
+  <br />
+  <div class="border-box" id="borderBox">替代（IE）盒模型</div>
+  <button onclick="getBorderBoxOffsetWidth()">获取替代（IE）盒模型的宽度</button>
+</body>
+<script>
+  function getContentBoxOffsetWidth () {
+    const offsetWidth = document.getElementById('contentBox').offsetWidth;
+    console.log('offsetWidth', offsetWidth) 
+    // 返回元素的宽度，包括边框（border）和内边距（padding），但不包含外边距（margin） --- 222
+    // 此时内容的宽度是 200
+  }
+  function getBorderBoxOffsetWidth () {
+    const offsetWidth = document.getElementById('borderBox').offsetWidth; 
+    // 返回元素的宽度 --- 200
+    // 此时内容的宽度是 -- 200-10-10-1-1=178
+    console.log('offsetWidth', offsetWidth)
+  }
+</script>
+</html>

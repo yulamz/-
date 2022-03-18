@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transition</title>
+  <link rel="stylesheet" type="text/css" href="myTest.css" />
+</head>
+<body>
+  <div class="demo">
+    <div class="cube show-default" id="container">
+      <div class="cube-face is-front"><img src="./img/oynn.jpg" alt="pic1"/></div>
+      <div class="cube-face is-back"><img src="./img/oynn.jpg" alt="pic2"/></div>
+      <div class="cube-face is-right"><img src="./img/oynn.jpg" alt="pic3"/></div>
+      <div class="cube-face is-left"><img src="./img/oynn.jpg" alt="pic4"/></div>
+      <div class="cube-face is-top"><img src="./img/oynn.jpg" alt="pic5"/></div>
+      <div class="cube-face is-bottom"><img src="./img/oynn.jpg" alt="pic6"/></div>
+    </div>
+  </div>
+  <button onclick="changeShow()">click me</button>
+</body>
+<script>
+  function changeShow () {
+    const dom = document.getElementById('container');
+    dom.classList.remove('show-default');
+    dom.classList.add('show-left');
+  }
+</script>
+</html>

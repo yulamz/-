@@ -1,0 +1,21 @@
+html {
+  font-size: 20vw;
+}
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 108px;
+  }
+}
+
+body {
+  max-width: 540px;
+  min-width: 320px;
+}
+/*# sourceMappingURL=index.css.map */

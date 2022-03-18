@@ -1,0 +1,17 @@
+@keyframes mouth {
+  0% {
+   transform: rotate(-80deg);
+   stroke-dasharray: 60, 95;
+   stroke-dashoffset: 0;
+  }
+  40% {
+   transform: rotate(280deg);
+   stroke-dasharray: 60, 95;
+   stroke-dashoffset: 0;
+  }
+  70%, 100% {
+   transform: rotate(280deg);
+   stroke-dashoffset: -23;
+   stroke-dasharray: 42, 95;
+  }
+ }

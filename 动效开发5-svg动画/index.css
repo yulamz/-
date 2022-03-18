@@ -1,0 +1,41 @@
+@-webkit-keyframes mouth {
+  0% {
+    -webkit-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+    stroke-dasharray: 60, 95;
+    stroke-dashoffset: 0;
+  }
+  40% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+    stroke-dasharray: 60, 95;
+    stroke-dashoffset: 0;
+  }
+  70%, 100% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+    stroke-dashoffset: -23;
+    stroke-dasharray: 42, 95;
+  }
+}
+@keyframes mouth {
+  0% {
+    -webkit-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+    stroke-dasharray: 60, 95;
+    stroke-dashoffset: 0;
+  }
+  40% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+    stroke-dasharray: 60, 95;
+    stroke-dashoffset: 0;
+  }
+  70%, 100% {
+    -webkit-transform: rotate(280deg);
+            transform: rotate(280deg);
+    stroke-dashoffset: -23;
+    stroke-dasharray: 42, 95;
+  }
+}
+/*# sourceMappingURL=index.css.map */
