@@ -1,0 +1,78 @@
+.container {
+  margin: 200px 0 0 200px;
+  display: inline-block;
+}
+
+.circle {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  float: left;
+  
+  animation-name: bounceInDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.circle0 {
+  @extend .circle;
+  background: PaleTurquoise;
+  animation-timing-function: ease;
+} 
+
+.circle1 {
+  @extend .circle;
+  background: salmon;
+  animation-timing-function: linear;
+}
+
+.circle2 {
+   @extend .circle;
+  background: lightskyblue;
+  animation-timing-function: ease-in;
+
+}
+
+.circle3 {
+  @extend .circle;
+  background: khaki;
+  animation-timing-function: ease-out;
+}
+
+.circle4 {
+  @extend .circle;
+  background: mediumturquoise;
+  animation-timing-function: ease-in-out;
+}
+
+.circle5 {
+  @extend .circle;
+  background: thistle;
+  animation-timing-function: cubic-bezier(0,1,.98,0);
+}
+
+@keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  100% {
+    transform: none;
+  }
+}
