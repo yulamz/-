@@ -1,35 +1,106 @@
 svg {
-  -webkit-animation: heartbeat .6s infinite ease-in;
-          animation: heartbeat .6s infinite ease-in;
+  -webkit-animation-name: heartBeat;
+          animation-name: heartBeat;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  -webkit-animation-delay: 3;
+          animation-delay: 3;
 }
 
-@-webkit-keyframes heartbeat {
+.container {
+  margin: 100px auto;
+  padding: 100px;
+  position: relative;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 100px;
+}
+
+.circle, .heart:before, .heart:after {
+  background: salmon;
+  border-radius: 50%;
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 100px;
+}
+
+.heart {
+  background: salmon;
+  height: 100px;
+  position: relative;
+  width: 100px;
+  -webkit-animation-name: heartBeat;
+          animation-name: heartBeat;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  -webkit-animation-delay: 3;
+          animation-delay: 3;
+}
+
+.heart:before {
+  top: -50px;
+}
+
+.heart:after {
+  left: -50px;
+}
+
+@-webkit-keyframes heartBeat {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(none);
+            transform: scale(none);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  30% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  45% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(none);
+            transform: scale(none);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(none);
+            transform: scale(none);
   }
 }
 
-@keyframes heartbeat {
+@keyframes heartBeat {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(none);
+            transform: scale(none);
+  }
+  20% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  30% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  45% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
   50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(none);
+            transform: scale(none);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(none);
+            transform: scale(none);
   }
 }
 /*# sourceMappingURL=style.css.map */
